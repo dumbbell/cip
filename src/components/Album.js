@@ -22,8 +22,8 @@ import { useWeb3React } from '@web3-react/core';
 import { useState, useEffect } from 'react';
 import ClubImmoPrivilege from '../artifacts/contracts/ClubImmoPrivilege.sol/ClubImmoPrivilege.json'
 
-const clubImmoAddress = "0xc5a5C42992dECbae36851359345FE25997F5C42d"; // Localhost
-//const clubImmoAddress = "0x6c6C4007bc6c5ebb48ceB1E95bA5aCf521274867"; // Ropsten
+//const clubImmoAddress = "0xc5a5C42992dECbae36851359345FE25997F5C42d"; // Localhost
+const clubImmoAddress = "0xe14e8AF51183483c630dd39998B17ea1CbbB244f"; // Ropsten
 
 function Copyright() {
   return (
