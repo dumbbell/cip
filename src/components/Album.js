@@ -60,7 +60,7 @@ export default function Album() {
       const contract = new ethers.Contract(clubImmoAddress, ClubImmoPrivilege.abi, signer);
 
       const thisPage = new URL(window.location.href);
-      const basePath = '/privileges/';
+      const basePath = 'privileges/';
       const paths = [
         'creation-sci.json',
         'creation-holding.json',
@@ -69,8 +69,9 @@ export default function Album() {
       ];
       const URIs = [];
       for (var path of paths) {
-        thisPage.pathname = basePath + path;
-        URIs.push(thisPage.href);
+        var url = new URL(basePath + path, thisPage);
+        console.log(url.href);
+        URIs.push(url.href);
       }
 
       const address = ethers.utils.getAddress(studentAddress);
