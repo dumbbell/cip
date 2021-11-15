@@ -23,7 +23,7 @@ import { useState, useEffect } from 'react';
 import ClubImmoPrivilege from '../artifacts/contracts/ClubImmoPrivilege.sol/ClubImmoPrivilege.json'
 
 //const clubImmoAddress = "0xc5a5C42992dECbae36851359345FE25997F5C42d"; // Localhost
-const clubImmoAddress = "0xe14e8AF51183483c630dd39998B17ea1CbbB244f"; // Ropsten
+const clubImmoAddress = "0x2e648C8bf5Ab4F1550be11BcF26E3D8d4024643E"; // Ropsten
 
 function Copyright() {
   return (
