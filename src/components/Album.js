@@ -44,6 +44,8 @@ export default function Album() {
   const web3React = useWeb3React();
   const [studentAddress, setStudentAddress] = useState();
   const [privileges, setPrivilegesList] = useState([]);
+  const privilegesBaseURL = new URL('privileges/', window.location.href);
+  console.log(privilegesBaseURL);
 
   // request access to the user's MetaMask account
   async function requestAccount() {
@@ -59,8 +61,6 @@ export default function Album() {
       const signer = provider.getSigner();
       const contract = new ethers.Contract(clubImmoAddress, ClubImmoPrivilege.abi, signer);
 
-      const thisPage = new URL(window.location.href);
-      const basePath = 'privileges/';
       const paths = [
         'creation-sci.json',
         'creation-holding.json',
@@ -69,7 +69,7 @@ export default function Album() {
       ];
       const URIs = [];
       for (var path of paths) {
-        var url = new URL(basePath + path, thisPage);
+        var url = new URL(path, privilegesBaseURL);
         console.log(url.href);
         URIs.push(url.href);
       }
@@ -182,7 +182,7 @@ export default function Album() {
                 >
                   <CardMedia
                     component="img"
-                    image={process.env.PUBLIC_URL + privilege.image}
+                    image={new URL(privilege.image, privilegesBaseURL).href}
                     alt={privilege.name}
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
